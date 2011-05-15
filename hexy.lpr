@@ -11,17 +11,14 @@ program hexy;
 {$mode objfpc}{$H+}
 
 uses
-  Interfaces, Forms, LResources, main;
+  Interfaces, Forms, main;
 
 {$R *.res}
 
-{$IFDEF WINDOWS}{$R hexy.rc}{$ENDIF}
-
 begin
-  {$I hexy.lrs}
   Application.Title:='Hexy';
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
-
+

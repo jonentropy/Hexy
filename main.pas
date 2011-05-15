@@ -14,19 +14,24 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ComCtrls;
+  StdCtrls, ComCtrls, LCLIntf;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    lblTAL: TLabel;
     lblStatus: TLabel;
     lblInstructions: TLabel;
     ProgressBar1: TProgressBar;
     procedure FormDropFiles(Sender: TObject; const FileNames: array of String);
+    procedure lblTALClick(Sender: TObject);
+    procedure lblTALMouseEnter(Sender: TObject);
+    procedure lblTALMouseLeave(Sender: TObject);
   private
     procedure ConvertToHex(filename: string);
+    function ReplaceIllegalChars(Input: String): String;
     { private declarations }
   public
     { public declarations }
@@ -36,7 +41,9 @@ var
   Form1: TForm1;
 
 const
-  SourceHeader: string = '//Auto-created by Hexy' + LineEnding +
+  DeveloperURL: string = 'http://github.com/tristan2468';
+  SourceHeader: string = '//Auto-created by Hexy binary to hex array conversion utility' + LineEnding +
+                         '//https://github.com/tristan2468/Hexy' + LineEnding +
                          '// on ';
 
 implementation
@@ -80,7 +87,8 @@ begin
       end;
 
       Outstring := SourceHeader + DateTimeToStr(Now) + LineEnding + LineEnding + #9 +
-                   'unsigned int ' + ChangeFileExt(ExtractFilename(Filename), '') + '[] = {';
+                   'unsigned byte ' + ReplaceIllegalChars(ChangeFileExt(ExtractFilename(Filename), '')) + '[' +
+                   IntToStr(FileSizeValue) + '] = {' + LineEnding + #9#9;
       i := 0;
       for j := Low(DataArray) to High(DataArray) do
       begin
@@ -90,13 +98,13 @@ begin
           Outstring := Outstring + ',';
         end;
 
-        Inc(i);
         if i > 15 then
         begin
           i := 0;
           Outstring := Outstring + LineEnding + #9#9;
         end;
 
+        Inc(i);
         Outstring := Outstring + '0x' + IntToHex(DataArray[j], 2);
 
         if j mod 32 = 0 then
@@ -140,6 +148,37 @@ var
 begin
   for i := Low(Filenames) to High(Filenames) do
     ConvertToHex(FileNames[i]);
+end;
+
+procedure TForm1.lblTALClick(Sender: TObject);
+begin
+  Screen.Cursor := crHourglass;
+  OpenURL(DeveloperURL);
+  Sleep(300);
+  Screen.Cursor := crDefault;
+end;
+
+procedure TForm1.lblTALMouseEnter(Sender: TObject);
+begin
+  TLabel(Sender).Font.Style := [fsUnderline, fsBold];
+  Screen.Cursor := crHandPoint;
+end;
+
+procedure TForm1.lblTALMouseLeave(Sender: TObject);
+begin
+  TLabel(Sender).Font.Style := [fsBold];
+  Screen.Cursor := crDefault;
+end;
+
+function TForm1.ReplaceIllegalChars(Input: string): string;
+begin
+  Result := Input;
+
+  if (Length(Result) > 0) and (Result[1] in ['0'..'9']) then
+    Result := '_' + Result;
+
+  Result := StringReplace(Result, '-', '_', [rfReplaceAll]);
+  Result := StringReplace(Result, ' ', '_', [rfReplaceAll]);
 end;
 
 initialization

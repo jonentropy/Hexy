@@ -2,4 +2,4 @@ Hexy is an open source utility designed to make embedded development in C easier
 
 Drag and drop files onto the GUI to start conversion. An "h" file is then created for each file that was dragged on to the application.
 
-Hexy is written in Lazarus http://lazarus.freepascal.org and requires Lazarus 0.9.28 or later. It is cross platform and has been tested on Windows and Linux.
+Hexy is written in Lazarus http://lazarus.freepascal.org and requires Lazarus 0.9.30 or later. It is cross platform and has been tested on Windows and Linux.
