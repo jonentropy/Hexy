@@ -1,12 +1,23 @@
-//
-// Copyright 2011 Tristan Linnell
-//    tris@canthack.org
-//
-// main.pas - Main form for Hexy
-//   binary to hex header file conversion utility
-//
+{
+ * Copyright (c) 2011, Tristan Linnell <tris@canthack.org>
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+}
 
-unit main;
+// Hexy - binary to hex header file conversion utility
+// main.pas - main GUI and logic.
+
+unit Main;
 
 {$mode objfpc}{$H+}
 
@@ -18,9 +29,9 @@ uses
 
 type
 
-  { TForm1 }
+  { TfrmMain }
 
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     lblTAL: TLabel;
     lblStatus: TLabel;
     lblInstructions: TLabel;
@@ -38,7 +49,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 const
   DeveloperURL: string = 'http://github.com/tristan2468';
@@ -48,9 +59,9 @@ const
 
 implementation
 
-{ TForm1 }
+{ TfrmMain }
 
-procedure TForm1.ConvertToHex(filename: string);
+procedure TfrmMain.ConvertToHex(filename: string);
 var
   Fin:     file;
   i, j: integer;
@@ -142,7 +153,7 @@ begin
   end;
 end;
 
-procedure TForm1.FormDropFiles(Sender: TObject; const FileNames: array of String);
+procedure TfrmMain.FormDropFiles(Sender: TObject; const FileNames: array of String);
 var
   i: integer;
 begin
@@ -150,7 +161,7 @@ begin
     ConvertToHex(FileNames[i]);
 end;
 
-procedure TForm1.lblTALClick(Sender: TObject);
+procedure TfrmMain.lblTALClick(Sender: TObject);
 begin
   Screen.Cursor := crHourglass;
   OpenURL(DeveloperURL);
@@ -158,19 +169,19 @@ begin
   Screen.Cursor := crDefault;
 end;
 
-procedure TForm1.lblTALMouseEnter(Sender: TObject);
+procedure TfrmMain.lblTALMouseEnter(Sender: TObject);
 begin
   TLabel(Sender).Font.Style := [fsUnderline, fsBold];
   Screen.Cursor := crHandPoint;
 end;
 
-procedure TForm1.lblTALMouseLeave(Sender: TObject);
+procedure TfrmMain.lblTALMouseLeave(Sender: TObject);
 begin
   TLabel(Sender).Font.Style := [fsBold];
   Screen.Cursor := crDefault;
 end;
 
-function TForm1.ReplaceIllegalChars(Input: string): string;
+function TfrmMain.ReplaceIllegalChars(Input: string): string;
 begin
   Result := Input;
 

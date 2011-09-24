@@ -10,4 +10,6 @@ Hexy is written in Lazarus http://lazarus.freepascal.org and requires Lazarus 0.
 If you are looking for precompiled binaries, please click the "Downloads" button on the top-right of this page and choose the binary you would like. Apart from the GTK widgetset on Linux, Hexy requires no further dependencies.
 If you would like to request precompiled binaries for different platforms, then please drop me an email at tris@canthack.org.
 
+Please refer to the COPYING file for licensing details.
+
 [![Buy me a beer, Flattr Hexy](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/402345/Hexy-Binary-to-Hex-Array-Converter) 

@@ -16,10 +16,10 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <MinorVersionNr Value="2"/>
+      <MinorVersionNr Value="3"/>
       <BuildNr Value="1"/>
       <Language Value="0809"/>
-      <StringTable Comments="Convert binary data into c hex arrays." CompanyName="Tristan Linnell" FileDescription="Convert binary data into c hex arrays." LegalCopyright="2011 Tristan Linnell" ProductName="Hexy"/>
+      <StringTable Comments="Convert binary data into c hex arrays." CompanyName="Tristan Linnell" FileDescription="Convert binary data into c hex arrays." LegalCopyright="2011 Tristan Linnell" ProductName="Hexy" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -41,15 +41,15 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="9">
       <Unit0>
         <Filename Value="hexy.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="hexy"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="11" Y="16"/>
+        <CursorPos X="10" Y="20"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -57,14 +57,14 @@
       <Unit1>
         <Filename Value="main.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmMain"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="main"/>
+        <UnitName Value="Main"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="85"/>
-        <CursorPos X="27" Y="152"/>
+        <TopLine Value="1"/>
+        <CursorPos X="40" Y="25"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -96,6 +96,34 @@
         <CursorPos X="14" Y="183"/>
         <UsageCount Value="10"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="..\hgdc-x\about.pas"/>
+        <UnitName Value="About"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="README.md"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="56" Y="13"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="COPYING"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="21" Y="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit8>
     </Units>
     <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
