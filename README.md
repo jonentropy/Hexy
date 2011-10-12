@@ -7,7 +7,7 @@ Drag and drop files onto the GUI to start conversion. An "h" file is then create
 
 Hexy is written in Lazarus http://lazarus.freepascal.org and requires Lazarus 0.9.30 or later. It is cross platform and has been tested on Windows and Linux.
 
-If you are looking for precompiled binaries, please click the "Downloads" button on the top-right of this page and choose the binary you would like. Apart from the GTK widgetset on Linux, Hexy requires no further dependencies.
+If you are looking for precompiled binaries, please click the "Downloads" tab above on this page and choose the binary you would like. Apart from the GTK widgetset on Linux, Hexy requires no further dependencies.
 If you would like to request precompiled binaries for different platforms, then please drop me an email at tris@canthack.org.
 
 Please refer to the COPYING file for licensing details.
